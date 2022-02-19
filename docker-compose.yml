@@ -1,0 +1,19 @@
+version: '3.7'
+
+networks:
+  web-proxy: 
+    external: true
+
+services:
+  h1cli:
+    image: ${servicename}
+    container_name: ${servicename}
+    build:
+      context: ./build
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    ports:
+      - "54500:4500"
+    networks:
+      - web-proxy
