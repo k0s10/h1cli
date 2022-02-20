@@ -94,7 +94,7 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
     if err != nil {
         log.Fatal(err)
     }
-    fmt.Fprintf(w, "Данные лицензий:\n %s", out)
+    fmt.Fprintf(w, "Данные лицензий:\n%s", out)
 }
 
 func main() {
