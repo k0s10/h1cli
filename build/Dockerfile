@@ -11,7 +11,7 @@ COPY ./site/* /h1cli/
 COPY ./1c /tmp/
 COPY --from=builder /app/run /h1cli/
 RUN cd /tmp/ && \
-  ./1ce-installer-cli install 
+  ./1ce-installer-cli install --ignore-signature-warnings
 
 #EXPOSE 4500
 WORKDIR /h1cli
